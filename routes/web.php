@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Blogs Route
     Route::get('/member/blogs',[BlogController::class, 'index']);
+    Route::get('/member/blogs',[BlogController::class, 'index']);
+
 
 });
 

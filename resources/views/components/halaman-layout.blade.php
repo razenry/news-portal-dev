@@ -10,7 +10,10 @@
 </head>
 
 <body>
+    {{ $slot }}
     <h1>Hallo Dari Component</h1>
+    <p>Tanggal: {{ $tanggal }} </p>
+    <p>Penulis: {{ $penulis }} </p>
 </body>
 
 </html>

@@ -5,16 +5,22 @@ namespace App\Http\Controllers\Member;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Post::all();
-        print_r($data);
+
+        $user = Auth::user();
+        $data = Post::where('user_id', $user->id)->orderBy('id', 'desc')->paginate(5);
+        return view('member.blogs.index', compact('data'));
     }
 
     /**
@@ -47,6 +53,7 @@ class BlogController extends Controller
     public function edit(Post $post)
     {
         //
+        print_r($post);
     }
 
     /**
