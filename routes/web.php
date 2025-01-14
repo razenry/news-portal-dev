@@ -20,6 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/member/blogs',[BlogController::class, 'index']);
     Route::get('/member/blogs/{post}/edit',[BlogController::class, 'edit']);
 
+    Route::resource('/member/blogs', BlogController::class)->names([
+        'index' => 'member.blogs.index',
+        'edit' => 'member.blogs.edit'
+    ]);
 
 });
 

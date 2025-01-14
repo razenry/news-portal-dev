@@ -35,7 +35,7 @@
                                         {{ $blog->created_at->isoFormat('dddd, D MMMM Y') }}</td>
                                     <td class="border px-6 py-4 text-center text-sm hidden lg:table-cell">{{ $blog->status }}</td>
                                     <td class="border px-6 py-4 text-center">
-                                        <a href='' class="text-blue-600 hover:text-blue-400 px-2">edit</a>
+                                        <a href='{{ route("member.blogs.edit", ['blog' => $blog->id]) }}' class="text-blue-600 hover:text-blue-400 px-2">edit</a>
                                         <a href='' class="text-blue-600 hover:text-blue-400 px-2">lihat</a>
                                         <button type=' submit' class='text-red-600 hover:text-red-400 px-2'>
                                             hapus
